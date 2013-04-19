@@ -1,0 +1,11 @@
+language: python
+python:
+    - "2.7"
+
+install: "pip install -r requirements.txt --use-mirrors"
+before_script:
+    - "pep8 --exclude=migrations --ignore=E501, E225, src"
+    - pyflakes -x W src
+script: nosetests
+#    - python setup.py test
+
